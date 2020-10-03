@@ -8,7 +8,7 @@ class UsersController < ApplicationController
    
     begin
       @user.save 
-      redirect_to user_path
+      redirect_to  root_path
     rescue => exception
       flash.now[:error] = "Sorry"
       render "new"
