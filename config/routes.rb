@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  get 'session/new'
-  get 'session/create'
-  get 'session/destroy'
+  get 'sessions/new'
+  get 'sessions/create'
+  get 'sessions/destroy'
  resources :users, only: [:new, :create, :show]
  root "users#index"
 end
