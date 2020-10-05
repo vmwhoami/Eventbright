@@ -13,4 +13,9 @@ class Event < ApplicationRecord
   has_many :invitations,  foreign_key: :event_party
   has_many :person_to_comes, through: :invitations
 
+  def self.person_to_comes
+    
+  end
+
+
 end
