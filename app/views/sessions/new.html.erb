@@ -9,8 +9,11 @@
   <input type="text" name="user[name]" id="name">
 
   <br />
-
- 
   <input type="submit" value="Log in!">
 </form>
  
+  <%# form_with model:@user do |f| %>
+  <%#f.label :name, "Name" %>
+  <%# f.text_field  :name %>
+  <%# f.submit "Create User" %>
+ <%# end %>
