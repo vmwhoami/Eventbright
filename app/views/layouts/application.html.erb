@@ -11,5 +11,7 @@
 
   <body>
     <%= yield %>
+  <%= current_user.name if current_user%>
+    <%= debug(params) if Rails.env.development? %>
   </body>
 </html>

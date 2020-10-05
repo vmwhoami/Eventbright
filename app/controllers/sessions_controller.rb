@@ -3,7 +3,14 @@ class SessionsController < ApplicationController
   end
 
   def create
-    session[:current_user_id] = @user.id
+    user = User.find_by(name: params[:session][:name])
+    if user
+      log_in(user)
+      redirect_to root_path
+    else
+      flash[:danger] = "Non registered name"
+    render 'new'
+    end
   end
 
   def destroy
