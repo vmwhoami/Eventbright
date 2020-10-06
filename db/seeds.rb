@@ -23,27 +23,41 @@ User.create(name:"Victoria")
 puts "Users Created!"
 
 
-4.times do |e|
+1.times do |e|
+  event = Event.new
+  event.name = "Last party"
+  event.creator = User.first
+  event.location = "Alecu Russo"
+  event.datetime = Time.now - 4.day
+  event.description = "It was party no one can forget "
+  event.save
+ end
+ 
+
+3.times do |e|
  event = Event.new
  event.name = "The #{e}'st party"
- event.creator = User.first
+ event.creator = User.last
  event.location = "Sf. Andrei 4#{e}"
- event.datetime = Time.now + 10.day
- event.description = "#{e}. Aperiam itaque, eligendi, aspernatur, vel asperiores necessitatibus tempore omnis distinctio libero quae labor"
+ event.datetime = Time.now + e.day
+ event.description = "#{e}. Aperiam itaque, eligendi, aspernatur, vel asperiores necessitatibus tempore "
  event.save
 end
 
 puts "Events created successfully!"
 
+Invitation.create(event_party: Event.first,person_to_come:User.second)
+Invitation.create(event_party: Event.first,person_to_come:User.third)
+Invitation.create(event_party: Event.first,person_to_come:User.fourth)
 
-3.times do |i|
-invite = Invitation.new
-invite.event_party = Event.first
-invite.person_to_come = User.first
-invite.person_to_come = User.second
-invite.person_to_come = User.third
-invite.save
-end
 
+Invitation.create(event_party: Event.second,person_to_come:User.second)
+Invitation.create(event_party: Event.second,person_to_come:User.third)
+Invitation.create(event_party: Event.second,person_to_come:User.fourth)
+
+
+Invitation.create(event_party: Event.third,person_to_come:User.second)
+Invitation.create(event_party: Event.third,person_to_come:User.third)
+Invitation.create(event_party: Event.third,person_to_come:User.fourth)
 
 puts "Invitations created successfully!"

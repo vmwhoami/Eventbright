@@ -2,7 +2,8 @@ class EventsController < ApplicationController
 include EventsHelper
 before_action :logged_user? ,except: [:index]
 def index
-  @events = Event.all
+  @past = Event.past
+  @future = Event.future
 end
 
 def new
@@ -27,8 +28,8 @@ end
  
 private
 
-def permited_params
-  params.require(:event).permit(:name,:location,:datetime,:description)
-end
+  def permited_params
+    params.require(:event).permit(:name,:location,:datetime,:description)
+  end
 
 end
