@@ -1,3 +1,21 @@
 // Place all the styles related to the Session controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+.username{
+  font-size: 20px;
+}
+
+.logout,
+.logout:link,
+.logout:visited{
+  font-size: 20px;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  text-decoration:none;
+ text-transform: uppercase;
+ font-weight: 700;
+
+ &:hover{
+   color: red;
+ }
+}

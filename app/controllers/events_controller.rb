@@ -1,7 +1,11 @@
 class EventsController < ApplicationController
+include EventsHelper
+before_action :logged_user? ,except: [:index]
+def index
+end
 
 def new
- @event = Event.new
+ @event = current_user.events.build
 end
 
 def create
@@ -15,9 +19,8 @@ else
 end
 
 def show
- @event = Event.find(params[:id])
+  @event = Event.find_by(params[:id])
 end
-
 
 end
 private

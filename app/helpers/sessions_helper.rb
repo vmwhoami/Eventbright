@@ -8,13 +8,21 @@ module SessionsHelper
     @current_user||= User.find_by(id: session[:user_id])
   end
 
-  def logged_in?
-    !!@current_user
-  end
-
   def log_out 
     session[:user_id] = nil
     @current_user = nil
+  end
+
+  def login_icon
+    link_to "Login", login_path  if !current_user
+  end
+
+  def logout_icon
+   render "layouts/logout" if current_user
+  end
+
+  def user_name
+     render "layouts/username" if current_user
   end
 
 
