@@ -14,16 +14,15 @@ module SessionsHelper
   end
 
   def login_icon
-    link_to "Login", login_path  if !current_user
+    link_to "Login", login_path,  class:"login" if !current_user
   end
 
   def logout_icon
    render "layouts/logout" if current_user
   end
-
-  def user_name
-     render "layouts/username" if current_user
-  end
-
+def username
+  render  "layouts/username" if current_user
+end
+ 
 
 end

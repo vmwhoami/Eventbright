@@ -1,4 +1,4 @@
-<h1>User <%= @user.name %></h1>
+<h1>User <%= @user.name %> has the following events created</h1>
  <% @user.events.each do |event| %>
  <li><%= event.name %> Location:  <%= event.location %></li>
  <% end %>

@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
- resources :events, only: [ :new ,:create,:show ]
+ resources :events 
  
  get '/login' , to:"sessions#new"
  post '/login' , to: "sessions#create"
