@@ -1,8 +1,39 @@
-<%@past.each do |event| %>
-<p><%= event.name %></p>
-<% end %>
+<h1 class = "text-center">Past events</h1>
 
-<h1>Upcoming events</h1>
-<%@future.each do |event| %>
-<p><%= event.name %></p>
+<div class="card-deck mb-3 text-center">
+<%@past.each do |event| %>
+        <div class="card mb-4 box-shadow">
+          <div class="card-header">
+            <h4 class="my-0 font-weight-normal"><%= event.name %></h4>
+          </div>
+          <div class="card-body">
+            <h1 class="card-title pricing-card-title"><%= event.creator.name %></h1>
+            <ul class="list-unstyled mt-3 mb-4">
+              <li>10 users included</li>
+              <li><%= event.location %></li>
+              
+            </ul>
+            <button type="button" class="btn btn-lg btn-block btn-outline-primary">Oh no its long due</button>
+          </div>
+        </div>
 <% end %>
+</div>
+<h1 class = "text-center">Upcoming events</h1>
+<div class="card-deck mb-3 text-center">
+<%@future.each do |event| %>
+  <div class="card mb-4 box-shadow">
+          <div class="card-header">
+            <h4 class="my-0 font-weight-normal"><%= event.name %></h4>
+          </div>
+          <div class="card-body">
+            <h1 class="card-title pricing-card-title"><%= event.creator.name %></h1>
+            <ul class="list-unstyled mt-3 mb-4">
+              <li>10 users included</li>
+              <li><%= event.location %></li>
+              
+            </ul>
+            <button type="button" class="btn btn-lg btn-block btn-outline-primary">Oh no its long due</button>
+          </div>
+        </div>
+<% end %>
+</div>

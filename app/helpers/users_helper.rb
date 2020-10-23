@@ -4,4 +4,7 @@ module UsersHelper
     current_user.name if current_user
   end
 
+  def register_icon
+    link_to "Register", new_user_path, class: "btn btn-outline-primary" if !current_user
+  end
 end

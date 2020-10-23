@@ -10,6 +10,7 @@ def logged_user?
 end
 
 def create_event
+   link_to "Create event", new_event_path, class: "p-2 text-dark" if current_user
 end
 
 end
