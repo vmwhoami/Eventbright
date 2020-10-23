@@ -11,10 +11,10 @@
 
   <body>
 <%= render 'layouts/navbar' %>
-<div class="container">
-        <%= yield %>
-      
- <p>See all  <%= link_to  "events", events_path %></p> 
+
+    <div class="container">
+      <%= yield %>
+     <p>See all  <%= link_to  "events", events_path %></p> 
     </div>
   </body>
 </html>

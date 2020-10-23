@@ -4,16 +4,13 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(permited_params)
-   
-    begin
-      @user.save 
-      redirect_to  root_path
-    rescue => exception
+    @user = User.new(permited_params) 
+    if  @user.save 
+      log_in(@user)
+       redirect_to  root_path
+    else
       flash.now[:error] = "Sorry"
       render "new"
-    else
-      redirect_to root_path
     end
   end
 

@@ -1,7 +1,12 @@
-<h1>Register</h1>
- 
- <%= form_with model:@user do |f| %>
-  <%=f.label :name, "Name" %>
-  <%= f.text_field  :name %>
-  <%= f.submit "Create User" %>
- <% end %>
+<h1 class="text-center">Register</h1>
+ <div class="row">
+  <div class="col-md-4"></div>
+    <div class="col-md-4">
+    <%= form_with model:@user,class: "form-signin" do |f| %>
+      <%=f.label :name, "Name",class:"sr-only" %>
+      <%= f.text_field  :name, class: "form-control"  %>
+      <%= f.submit "Create User",class:"btn btn-lg btn-primary btn-block rounded-0"  %>
+    <% end %>
+    </div>
+    <div class="col-md-4"></div>
+ </div>

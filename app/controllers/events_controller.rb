@@ -1,6 +1,6 @@
 class EventsController < ApplicationController
 include EventsHelper
-before_action :logged_user? ,except: [:index]
+before_action :logged_user? ,except: %i[index]
 def index
   @past = Event.past
   @future = Event.future
@@ -32,4 +32,5 @@ private
     params.require(:event).permit(:name,:location,:datetime,:description)
   end
 
+ 
 end

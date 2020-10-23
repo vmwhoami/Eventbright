@@ -14,7 +14,7 @@ module SessionsHelper
   end
 
   def login_icon
-    link_to "Login", login_path,  class:"login" if !current_user
+    link_to "Login", login_path,  class: "btn btn-outline-primary active" if !current_user
   end
 
   def logout_icon
