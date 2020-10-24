@@ -9,6 +9,10 @@ def logged_user?
   end
 end
 
+def current_user?
+  redirect_to users_path if current_user != @user
+end
+
 def create_event
    link_to "Create event", new_event_path, class: "p-2 text-dark" if current_user
 end

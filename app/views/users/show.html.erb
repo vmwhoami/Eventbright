@@ -1,9 +1,9 @@
-<h1>User <%= @user.name %> has the following events created</h1>
+<h4 class="text-center">User <%= @user.name %> events created</h4>
  <% @user.events.each do |event| %>
  <li><%= event.name %> Location:  <%= event.location %></li>
  <% end %>
 
-<h1>User <%= @user.name %>  Is attending the following events</h1>
+<h4 class="text-center">  <%= @user.name %>  Is attending </h4>
 <h3>Upcoming events</h3>
 
 <% @user.event_parties.each do |party| %>

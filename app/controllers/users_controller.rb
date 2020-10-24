@@ -1,4 +1,9 @@
 class UsersController < ApplicationController
+
+  include EventsHelper
+  before_action :find_user,only: %i[show]
+before_action :logged_user? ,only: %i[index show ]
+before_action :current_user? ,only: %i[show]
 def index
   @users = User.all
 end
@@ -24,6 +29,10 @@ end
   end
 
   private
+def find_user
+  @user = User.find(params[:id])
+end
+
   def permited_params
    params.require(:user).permit(:name)
   end
