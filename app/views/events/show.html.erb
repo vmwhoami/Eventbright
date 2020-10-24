@@ -1,11 +1,44 @@
  
-<h1>Show</h1>
- 
- <p>Event creator<%= @event.creator.name %></p>
- <p>Event attendees:
+<h1 class="text-center"> <%= @event.name.upcase %> </h1>
+
+<div class="card  box-shadow"  >
+  <div class="card-body">
+    <h5 class="card-title ">Evente created by <%= @event.creator.name.upcase %></h5>
+  </div>
+  <div class="card-body">
+   <p> Event location: <%= @event.location %></p>
+   <p>Event date: <%= @event.datetime %></p>
+   <h5> <%= @event.name.upcase %> </h5>
+   <p><%= @event.description %></p>
+   
+  </div>
+</div>
+
  <% @event.person_to_comes.each do |person| %>
 
- <p><%=  person.name%></p>
+
 <% end %>
 
-</p>
+
+
+
+<h2 class="text-center">Invite users </h2>
+ 
+<div class="card-deck mb-3 text-center">
+<% @users.each do |user| %>
+<div class="card-deck mb-3 text-center">
+  <div class="card mb-4 box-shadow">
+      <div class="card-header">
+            <h4 class="my-0 font-weight-normal"><%= user.name %></h4>
+          </div>
+          <div class="card-body">
+            <h1 class="card-title pricing-card-title"></h1>
+            <%= link_to  "Invite #{  user.name  }", user_path(user), class:"btn btn-lg btn-block btn-primary" %>
+            
+          </div>
+      </div>
+  </div>
+<% end %>
+
+</div>
+</div>

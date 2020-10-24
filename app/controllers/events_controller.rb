@@ -22,7 +22,9 @@ def create
 end
 
 def show
+  
   @event = Event.find(params[:id])
+  @users = User.all
 end
 
  
