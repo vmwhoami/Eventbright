@@ -6,13 +6,14 @@ class InvitationsController < ApplicationController
  
  
   def create
-    @invitation = Invitation.new(params[:id])
+    debugger
+    @invitation = Invitation.new(person_to_come_id: params[:person_to_come_id],event_party_id:params[:event_party_id])
     if @invitation.save
       flash[:success] = "Invitation sent"
-      redirect_to @object
+      redirect_to root_path
     else
       flash[:error] = "Something went wrong"
-      render 'new'
+      redirect_to user_path(current_user)
     end
   end
   
