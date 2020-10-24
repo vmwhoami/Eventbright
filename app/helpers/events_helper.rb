@@ -14,7 +14,7 @@ def current_user?
 end
 
 def create_event
-   link_to "Create event", new_event_path, class: "p-2 text-dark" if current_user
+   link_to "Create event", new_event_path, class: "btn btn-outline-success " if current_user
 end
 
 end
