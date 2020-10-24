@@ -6,7 +6,7 @@ class InvitationsController < ApplicationController
  
  
   def create
-    @invitation = Invitation.new(params[:object])
+    @invitation = Invitation.new(params[:id])
     if @invitation.save
       flash[:success] = "Invitation sent"
       redirect_to @object
