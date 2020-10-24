@@ -20,27 +20,11 @@
   </div>
 </div>
 
-
-
-
-
-
 <h2 class="text-center">Invite users </h2>
- 
 <div class="card-deck mb-3 text-center">
 <% @users.each do |user| %>
-<div class="card-deck mb-3 text-center">
-  <div class="card mb-4 box-shadow">
-      <div class="card-header">
-            <h4 class="my-0 font-weight-normal"><%= user.name %></h4>
-          </div>
-          <div class="card-body">
-          
-            <%= link_to  "Invite #{  user.name  }", user_path(user), class:"btn btn-lg btn-block btn-primary" %>
-            
-          </div>
-      </div>
-  </div>
+  <% @variable = user %>
+  <%= render_invited_users(@event,user) %>
 <% end %>
 
 </div>

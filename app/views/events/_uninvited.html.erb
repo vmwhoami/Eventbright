@@ -1,0 +1,11 @@
+<% @variable %>
+<div class="card-deck mb-3 text-center">
+  <div class="card mb-4 box-shadow">
+      <div class="card-header">
+            <h4 class="my-0 font-weight-normal"><%= @variable.name %></h4>
+          </div>
+          <div class="card-body">
+            <%= link_to  "Invite #{  @variable.name  }", user_path(@variable), class:"btn btn-lg btn-block btn-primary" %>
+          </div>
+      </div>
+  </div>
