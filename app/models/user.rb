@@ -21,7 +21,7 @@ class User < ApplicationRecord
  has_many :event_parties, through: :invitations
 
  def check_name_length
-  if self.name.length <= 4
+  if self.name.length <= 3
     errors[:name] << "is too short must be longer than 4 characters"
   end 
  end

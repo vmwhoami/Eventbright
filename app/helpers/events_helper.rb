@@ -19,7 +19,7 @@ end
 
 def render_invited_users(event,user)
   user = @variable
-  render "events/uninvited" if !event.person_to_comes.include?(user)
+  render "events/uninvited" unless event.person_to_comes.include?(user)
 end
 
 end
