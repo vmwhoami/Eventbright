@@ -6,7 +6,7 @@
             <h4 class="my-0 font-weight-normal"><%= @theuser.name %></h4>
           </div>
           <div class="card-body">
-            <%= link_to( "Invite #{  @theuser.name  }", user_invitations_path(:person_to_come_id => @theuser.id, :event_party_id=> @thevent.id ),method: :post ,class:"btn btn-lg btn-block btn-primary" )%>
+            <%= link_to( "Invite", user_invitations_path( :user_id =>@theuser.id ),method: :post ,class:"btn btn-lg btn-block btn-primary" )%>
           </div>
       </div>
   </div>

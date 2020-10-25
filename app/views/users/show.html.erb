@@ -1,8 +1,9 @@
 <h4 class="text-center">User <%= @user.name %> events created</h4>
  <% @user.events.each do |event| %>
+ <%= link_to  event_path(event) do %>
  <li><%= event.name %> Location:  <%= event.location %></li>
  <% end %>
-
+<% end %>
 <h4 class="text-center">  <%= @user.name %>  Is attending </h4>
 <h3>Upcoming events</h3>
 
