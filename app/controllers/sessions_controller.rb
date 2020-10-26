@@ -1,6 +1,7 @@
+# frozen_string_literal: true
+
 class SessionsController < ApplicationController
-  def new
-  end
+  def new; end
 
   def create
     user = User.find_by(name: params[:session][:name])
@@ -8,8 +9,8 @@ class SessionsController < ApplicationController
       log_in(user)
       redirect_to root_path
     else
-    flash[:danger] = "Non registered name"
-    render 'new'
+      flash[:danger] = 'Non registered name'
+      render 'new'
     end
   end
 
