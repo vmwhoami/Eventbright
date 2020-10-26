@@ -24,5 +24,8 @@ def username
   render  "layouts/username" if current_user
 end
  
+def event_creator?(user,event)
+  current_user == event.creator
+end
 
 end
