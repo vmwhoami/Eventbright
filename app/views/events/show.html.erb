@@ -25,7 +25,11 @@
 <% @users.each do |user| %>
   <% @theuser = user%>
   <% @thevent = @event %>
-  <%= render_invited_users(@event,user) %>
+<div class="card-deck mb-3 text-center">
+  <div class="card mb-4 box-shadow"> 
+  <%= render_invited_users(@event ,user) %>
+  </div>
+</div>
 <% end %>
 
 </div>

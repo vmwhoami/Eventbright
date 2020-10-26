@@ -1,12 +1,9 @@
 <% @theuser %>
 <% @thevent %>
-<div class="card-deck mb-3 text-center">
-  <div class="card mb-4 box-shadow">
-      <div class="card-header">
-            <h4 class="my-0 font-weight-normal"><%= @theuser.name %></h4>
-          </div>
-          <div class="card-body">
-            <%= link_to( "Invite", user_invitations_path( :user_id =>@theuser.id,:event_party_id =>@thevent.id),method: :post ,class:"btn btn-lg btn-block btn-primary" )%>
-          </div>
-      </div>
-  </div>
+
+<div class="card-header">
+  <h4 class="my-0 font-weight-normal"><%= @theuser.name %></h4>
+</div>
+<div class="card-body">
+  <%= link_to( "Invite", user_invitations_path( :user_id =>@theuser.id,:event_party_id =>@thevent.id),method: :post ,class:"btn btn-lg btn-block btn-primary" )%>
+</div>

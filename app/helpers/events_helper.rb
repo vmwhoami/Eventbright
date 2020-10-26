@@ -18,8 +18,7 @@ def create_event
 end
 
 def render_invited_users(event,user)
-  user = @variable
-  render "events/uninvited" unless event.person_to_comes.include?(user)
+  render "events/uninvited"  unless event.person_to_comes.include?(user) || event.creator == user
 end
 
 end
