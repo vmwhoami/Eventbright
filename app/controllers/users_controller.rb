@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class UsersController < ApplicationController
   include EventsHelper
   before_action :find_user, only: %i[show]

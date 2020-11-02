@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 module SessionsHelper
   def log_in(user)
     session[:user_id] = user.id # Don't forget session is a hash so square brackets
