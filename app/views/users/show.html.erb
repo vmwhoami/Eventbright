@@ -1,0 +1,24 @@
+<h4 class="text-center">User <%= @user.name %> events created</h4>
+ <% @user.events.each do |event| %>
+ <%= link_to  event_path(event) do %>
+ <li><%= event.name %> Location:  <%= event.location %></li>
+ <% end %>
+<% end %>
+<h4 class="text-center">  <%= @user.name %>  Is attending </h4>
+<h3>Upcoming events</h3>
+
+<% @user.event_parties.each do |party| %>
+
+<% if party.datetime > Time.now %>
+  <h3>Upcoming event <%= party.name %></h3>
+    <p><%= party.datetime %></p>
+  <p>Location:<%= party.location %></p>
+  <% else %>
+   <h3>Past events <%= party.datetime %> <%= party.name %></h3>
+  <p>Name: <%= party.name %></p>
+  <p>Location:<%= party.location %></p>
+<% end %>
+
+
+
+<% end %>

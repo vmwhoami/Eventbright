@@ -1,0 +1,36 @@
+ 
+<h1 class="text-center"> <%= @event.name.upcase %> </h1>
+
+<div class="card  box-shadow"  >
+  <div class="card-body">
+    <h5 class="card-title ">Evente created by <%= @event.creator.name.upcase %></h5>
+  </div>
+  <div class="card-body">
+   <p> Event location: <%= @event.location %></p>
+   <p>Event date: <%= @event.datetime %></p>
+   <h5> <%= @event.name.upcase %> </h5>
+   <p><%= @event.description %></p>
+   <h3 class ="text-center">Invited people to the event</h3>
+   <ul class="list-group">
+ <% @event.person_to_comes.each do |person| %>
+<li class="list-group-item"><%= person.name %></li>
+ 
+<% end %>
+</ul>
+  </div>
+</div>
+
+
+<div class="card-deck mb-3 text-center">
+<% @users.each do |user| %>
+  <% @theuser = user%>
+  <% @thevent = @event %>
+<div class="card-deck mb-3 text-center">
+  <div class="card mb-4 box-shadow"> 
+  <%= render_invited_users(@event ,user) if event_creator?(user,@event)%>
+  </div>
+</div>
+<% end %>
+
+</div>
+</div>

@@ -1,0 +1,23 @@
+<h1 class = "text-center">Welcome <%= user_name %> </h1>
+<div class="row">
+
+<% @users.each do |user| %>
+<div class="card-deck mb-3 text-center">
+  <div class="card mb-4 box-shadow">
+      <div class="card-header">
+            <h4 class="my-0 font-weight-normal"><%= user.name %></h4>
+          </div>
+          <div class="card-body">
+            <h1 class="card-title pricing-card-title"></h1>
+            <%= link_to  "#{  user.name  }", user_path(user), class:"btn btn-lg btn-block btn-primary" %>
+            
+          </div>
+      </div>
+  </div>
+<% end %>
+
+</div>
+
+
+    
+ 

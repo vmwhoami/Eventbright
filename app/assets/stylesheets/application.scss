@@ -1,0 +1,42 @@
+
+$trebush:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', arial, sans-serif;
+
+.debug_dump {
+  font-size: 16px;
+  max-width: 300px;
+}
+
+.logout,
+.logout:link,
+.logout:visited,
+.login:link,
+.login:visited {
+  font-size: 20px;
+  display: inline-block;
+  text-decoration: none;
+  font-family: $trebush;
+  text-transform: uppercase;
+  padding: 10px 20px;
+  background-color: rgb(89, 156, 255);
+  color: white;
+  font-weight: 700;
+  transition: all 0.2s;
+  margin: 10px;
+
+  &:hover {
+    background-color: rgb(56, 15, 170);
+  }
+}
+
+.username {
+  display: block;
+  width: 400px;
+  margin: 0 auto;
+  font-size: 20px;
+  font-family: $trebush;
+}
+
+.name {
+  font-size: 20px;
+  color: red;
+}
